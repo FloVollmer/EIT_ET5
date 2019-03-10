@@ -41,8 +41,7 @@ def parseConllFile(c_file, ptb):
 	for line in specific_entities:
 		# for word in line[0].split(" "):
 		# 	msyn_token += (word + "_" + (line[1] if ptb else PTB_to_Universal(line[1])) + " ")
-		msyn_token += (multipleWordToken(line[0]) + "_" + (line[1] if ptb else PTB_to_Universal(line[1])) + " ")
-		print(msyn_token) # TODO : check
+		msyn_token += (multipleWordToken(line[0]) + "_" + (line[1] if ptb else PTB_to_Universal(line[1])) + " ") # TODO : check
 		tag += getTagFromLine(line)
 
 	return msyn_token, tag
@@ -109,6 +108,13 @@ def multipleWordToken(token):
 		
 	return token
 
+def removeEspaceToken(output):
+	words = output.split()
+	for word in words:
+		if("Espace" in word):
+			new_word = word.replace("Espace", " ")
+			output = output.replace(word, new_word)
+	return output
 
 def getTagFromLine(line):
 	if(line[2] != "_"):
@@ -138,9 +144,11 @@ if __name__=="__main__":
 
 	# Parse conllFile to PTB and Universal
 	output_ptb, output_entity = parseConllFile(conll_file, True)
-	# print(output_ptb)
+	output_ptb = removeEspaceToken(output_ptb)
+	output_entity = removeEspaceToken(output_entity)
 	output_universal, output_entity = parseConllFile(conll_file, False)
-	# print(output_tag)
+	output_universal = removeEspaceToken(output_universal)
+	output_entity = removeEspaceToken(output_entity)
 	
 	# Save the output in files
 	print("Parsing the conll file \"%s\" to output_ptb.pos.lima, output_univ.pos.lima and output_entity.pos.lima !" % conll_file)
