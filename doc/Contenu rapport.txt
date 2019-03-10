@@ -4,7 +4,7 @@ Introduction -> parler de la problématique
                 -> Expérimenter deux plateformes d'analyse linguistique
                 -> Evaluer et comparer ces deux plateformes
 
-Etat de l'art (bibliographie #cancer)
+Etat de l'art (bibliographie #cancer cf mail du prof)
     -> Décrire brièvement les différences d'analyse linguistique
     -> Motivations pour le choix de deux plateformes à étudier
 
