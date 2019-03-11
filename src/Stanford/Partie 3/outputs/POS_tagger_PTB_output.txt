@@ -1,0 +1,7 @@
+Warning: the reference and the candidate consists of different number of lines!
+Word precision: 0.746478873239
+Word recall: 0.481818181818
+Tag precision: 0.732394366197
+Tag recall: 0.472727272727
+Word F-measure: 0.585635359116
+Tag F-measure: 0.574585635359

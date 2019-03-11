@@ -1,0 +1,8 @@
+Organization.ORGANIZATION		ORGANIZATION
+Location.LOCATION				LOCATION
+Person.PERSON					PERSON
+_								O
+DateTime.TIME					O
+DateTime.DATE					O
+Numex.NUMEX						O
+Numex.NUMBER					O
